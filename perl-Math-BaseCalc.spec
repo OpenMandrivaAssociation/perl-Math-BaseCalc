@@ -12,7 +12,6 @@ Source:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Math/%{module}-%{version}
 URL:		http://search.cpan.org/dist/%{module}
 Requires:	perl >= 5.0
 Buildrequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch:	noarch
 
 %description
