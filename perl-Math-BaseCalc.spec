@@ -1,6 +1,6 @@
 %define module Math-BaseCalc
-%define version 1.011
-%define release %mkrel 8
+%define version 1.012
+%define release %mkrel 1
 
 Summary:	%{module} perl module
 Name:		perl-%{module}
