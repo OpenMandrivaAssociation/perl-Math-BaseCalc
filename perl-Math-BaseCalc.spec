@@ -19,7 +19,7 @@ number bases.  You may define your own digit sets, or use any of
 several predefined digit sets.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-%{upstream_version}
 
 %build
 
