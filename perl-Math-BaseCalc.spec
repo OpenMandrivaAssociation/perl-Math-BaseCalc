@@ -1,18 +1,16 @@
 %define module Math-BaseCalc
-%define version 1.016
-%define release %mkrel 1
+%define upstream_version 1.016
 
 Summary:	%{module} perl module
 Name:		perl-%{module}
-Version:	%{version}
-Release:	%{release}
+Version:	%perl_convert_version 1.016
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Math/%{module}-%{version}.tar.gz
+Source:		ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Math/Math-BaseCalc-1.016.tar.gz
 URL:		http://search.cpan.org/dist/%{module}
 Requires:	perl >= 5.0
 Buildrequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch:	noarch
 
 %description
@@ -25,22 +23,16 @@ several predefined digit sets.
 
 %build
 
-CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
+CFLAGS="%{optflags}" %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
-
 %make PREFIX=%buildroot%{_prefix} install DESTDIR=%buildroot
 
-%clean
-rm -rf %buildroot
-
 %files 
-%defattr(-,root,root)
 %doc Changes MANIFEST
 %{perl_vendorlib}/Math/*
 %{_mandir}/*/*
@@ -83,13 +75,13 @@ rm -rf %buildroot
 - rebuild
 
 
-* Thu May 11 2006 Nicolas Lécureuil <neoclust@mandriva.org> 1.011-7mdk
+* Thu May 11 2006 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.011-7mdk
 - Fix Build
 - Fix Source URL
 - Fix URL
 - use mkrel
 
-* Mon Jun 06 2005 Nicolas Lécureuil <neoclust@mandriva.org> 1.011-6mdk
+* Mon Jun 06 2005 Nicolas LÃ©cureuil <neoclust@mandriva.org> 1.011-6mdk
 - rebuild for new Perl
 
 * Tue Aug 12 2003 Lenny Cartier <lenny@mandrakesoft.com> 1.011-5mdk
@@ -97,4 +89,5 @@ rm -rf %buildroot
 
 * Wed May 28 2003 Thierry Vignaud <tvignaud@mandrakesoft.com> 1.011-4mdk
 - rebuild for new auto{prov,req}
+
 
