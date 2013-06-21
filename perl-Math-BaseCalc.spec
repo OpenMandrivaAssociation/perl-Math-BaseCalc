@@ -1,7 +1,5 @@
 %define module Math-BaseCalc
-%define version 1.016
-%define release %mkrel 1
-
+%define upstream_version 1.016
 Summary:	%{module} perl module
 Name:		perl-%{module}
 Version:	%perl_convert_version 1.016
@@ -12,7 +10,6 @@ Source:		ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Math/Math-BaseCalc-1.0
 URL:		http://search.cpan.org/dist/%{module}
 Requires:	perl >= 5.0
 Buildrequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Buildarch:	noarch
 
 %description
@@ -21,26 +18,20 @@ number bases.  You may define your own digit sets, or use any of
 several predefined digit sets.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{module}-%{upstream_version}
 
 %build
 
-CFLAGS="$RPM_OPT_FLAGS" %{__perl} Makefile.PL INSTALLDIRS=vendor
+CFLAGS="%{optflags}" %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
-
 %make PREFIX=%buildroot%{_prefix} install DESTDIR=%buildroot
 
-%clean
-rm -rf %buildroot
-
 %files 
-%defattr(-,root,root)
 %doc Changes MANIFEST
 %{perl_vendorlib}/Math/*
 %{_mandir}/*/*
@@ -97,5 +88,6 @@ rm -rf %buildroot
 
 * Wed May 28 2003 Thierry Vignaud <tvignaud@mandrakesoft.com> 1.011-4mdk
 - rebuild for new auto{prov,req}
+
 
 
