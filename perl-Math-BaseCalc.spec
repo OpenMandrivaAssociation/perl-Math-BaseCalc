@@ -4,7 +4,7 @@
 Summary:	%{module} perl module
 Name:		perl-%{module}
 Version:	%perl_convert_version 1.017
-Release:	1
+Release:	2
 License:	GPL or Artistic
 Group:		Development/Perl
 Source:		ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Math/Math-BaseCalc-1.017.tar.gz
