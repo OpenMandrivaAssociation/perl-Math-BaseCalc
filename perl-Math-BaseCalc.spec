@@ -8,7 +8,7 @@ Release:	3
 License:	GPL or Artistic
 Group:		Development/Perl
 Source:		ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Math/Math-BaseCalc-1.017.tar.gz
-URL:		http://search.cpan.org/dist/%{module}
+URL:		https://search.cpan.org/dist/%{module}
 Requires:	perl >= 5.0
 Buildrequires:	perl-devel
 Buildarch:	noarch
