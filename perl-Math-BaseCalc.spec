@@ -1,14 +1,14 @@
 %define module Math-BaseCalc
-%define upstream_version 1.017
+%define upstream_version 1.019
 
 Summary:	%{module} perl module
 Name:		perl-%{module}
-Version:	%perl_convert_version 1.017
-Release:	3
+Version:	%{upstream_version}
+Release:	1
 License:	GPL or Artistic
 Group:		Development/Perl
-Source:		ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Math/Math-BaseCalc-1.017.tar.gz
-URL:		https://search.cpan.org/dist/%{module}
+Source:		https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/Math-BaseCalc-1.019.tar.gz
+URL:		https://github.com/kenahoo/perl-math-basecalc
 Requires:	perl >= 5.0
 BuildRequires:	make
 Buildrequires:	perl-devel
